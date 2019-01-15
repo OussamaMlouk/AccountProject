@@ -5,6 +5,10 @@ import com.google.gson.Gson;
 import repositries.Account;
 
 public class App {
+	
+	private App() {
+		
+	}
 
 	public static void main(String[] args) {
 

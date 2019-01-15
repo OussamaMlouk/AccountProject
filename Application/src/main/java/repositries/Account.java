@@ -6,7 +6,6 @@ public class Account {
 	private int accountNumber;
 
 	public Account(String firstName, String lastName, int accountNumber) {
-		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.accountNumber = accountNumber;
