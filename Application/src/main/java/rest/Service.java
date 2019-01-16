@@ -5,7 +5,7 @@ import repositries.Account;
 
 public class Service {
 	private Integer id = 0;
-	HashMap<Integer, Account> accountMap = new HashMap<>();
+	private HashMap<Integer, Account> accountMap = new HashMap<>();
 	
 	public void addToAccountMap(Account account) {
 		accountMap.put(id, account);
@@ -13,8 +13,18 @@ public class Service {
 		
 	}
 	
-	public Object retrieveAccountById(int id) {
+	public Account retrieveAccountById(int id) {
 		return accountMap.get(id);
+	}
+	
+	public int searchAccount(String firstName) {
+		int count = 0;
+		for(int i =0; i<id; i++) {
+			if(retrieveAccountById(i).getFirstName().equals(firstName)) {
+				count += 1;
+			}
+		}
+		return count;
 	}
 	
 
