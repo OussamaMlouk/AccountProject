@@ -1,4 +1,4 @@
-package repositries;
+package com.qa.persistence.repository;
 
 public class Account { 
 	private String firstName;
