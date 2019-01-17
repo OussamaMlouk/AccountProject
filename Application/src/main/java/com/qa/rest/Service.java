@@ -1,7 +1,7 @@
-package rest;
+package com.qa.rest;
 import java.util.HashMap;
 
-import repositries.Account;
+import com.qa.persistence.repository.Account;
 
 public class Service {
 	private Integer id = 0;

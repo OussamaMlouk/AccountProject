@@ -1,9 +1,9 @@
-package test;
+package com.qa.service.repository;
 
 import org.junit.Test;
 
-import repositries.Account;
-import rest.Service;
+import com.qa.persistence.repository.Account;
+import com.qa.rest.Service;
 
 import static org.junit.Assert.*;
 
