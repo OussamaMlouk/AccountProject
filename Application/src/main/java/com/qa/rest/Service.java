@@ -1,19 +1,19 @@
 package com.qa.rest;
 import java.util.HashMap;
 
-import com.qa.persistence.repository.Account;
+import com.qa.persistence.domain.AccountJavaSE;
 
 public class Service {
 	private Integer id = 0;
-	private HashMap<Integer, Account> accountMap = new HashMap<>();
+	private HashMap<Integer, AccountJavaSE> accountMap = new HashMap<>();
 	
-	public void addToAccountMap(Account account) {
+	public void addToAccountMap(AccountJavaSE account) {
 		accountMap.put(id, account);
 		id +=1;
 		
 	}
 	
-	public Account retrieveAccountById(int id) {
+	public AccountJavaSE retrieveAccountById(int id) {
 		return accountMap.get(id);
 	}
 	
