@@ -17,19 +17,21 @@ import com.qa.util.JSONUtil;
 
 @Default
 @Transactional(SUPPORTS)
-public class AccountDBImpl {
+public class AccountDBImpl implements AccountRepository {
 	@PersistenceContext(unitName = "primary")
 	private EntityManager em;
 
 	@Inject
 	private JSONUtil util;
-	
+
+	@Override
 	public String getAllAccounts() {
 		Query query = em.createQuery("SELECT a FROM Account a");
 		Collection<Account> accounts = (Collection<Account>) query.getResultList();
 		return util.getJSONForObject(accounts);
 	}
 
+	@Override
 	@Transactional(REQUIRED)
 	public String createAccount(String account) {
 		Account anAccount = util.getObjectForJSON(account, Account.class);
@@ -41,6 +43,7 @@ public class AccountDBImpl {
 		return em.find(Account.class, id);
 	}
 
+	@Override
 	@Transactional(REQUIRED)
 	public String deleteAccount(Long id) {
 		Account accountInDB = findAccount(id);
@@ -53,6 +56,7 @@ public class AccountDBImpl {
 
 	}
 
+	@Override
 	@Transactional(REQUIRED)
 	public String updateAccount(String account, Long id) {
 		Account accountInDB = findAccount(id);

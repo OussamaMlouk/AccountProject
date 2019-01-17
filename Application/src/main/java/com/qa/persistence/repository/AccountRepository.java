@@ -4,7 +4,7 @@ import com.qa.persistence.domain.Account;
 
 public interface AccountRepository {
 	public String getAllAccounts();
-	
+
 	public String createAccount(String account);
 
 	public Account findAccount(Long id);
