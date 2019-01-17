@@ -4,6 +4,8 @@
 	<groupId>com.qa</groupId>
 	<artifactId>Application</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	  <packaging>war</packaging>
+	
 	<!-- https://mvnrepository.com/artifact/junit/junit -->
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

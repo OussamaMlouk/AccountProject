@@ -8,12 +8,14 @@ import static javax.transaction.Transactional.TxType.*;
 
 import java.util.Collection;
 
+import javax.enterprise.inject.Default;
 import javax.inject.Inject;
 import javax.transaction.Transactional;
-import com.qa.util.*;
 
 import com.qa.persistence.domain.Account;
+import com.qa.util.JSONUtil;
 
+@Default
 @Transactional(SUPPORTS)
 public class AccountDBImpl {
 	@PersistenceContext(unitName = "primary")
@@ -21,7 +23,7 @@ public class AccountDBImpl {
 
 	@Inject
 	private JSONUtil util;
-
+	
 	public String getAllAccounts() {
 		Query query = em.createQuery("SELECT a FROM Account a");
 		Collection<Account> accounts = (Collection<Account>) query.getResultList();

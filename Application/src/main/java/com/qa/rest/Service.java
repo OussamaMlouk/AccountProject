@@ -1,8 +1,11 @@
 package com.qa.rest;
 import java.util.HashMap;
 
+import javax.enterprise.inject.Alternative;
+
 import com.qa.persistence.domain.AccountJavaSE;
 
+@Alternative
 public class Service {
 	private Integer id = 0;
 	private HashMap<Integer, AccountJavaSE> accountMap = new HashMap<>();
