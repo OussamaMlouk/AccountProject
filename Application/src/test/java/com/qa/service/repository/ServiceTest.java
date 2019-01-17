@@ -2,7 +2,7 @@ package com.qa.service.repository;
 
 import org.junit.Test;
 
-import com.qa.persistence.repository.Account;
+import com.qa.persistence.domain.AccountJavaSE;
 import com.qa.rest.Service;
 
 import static org.junit.Assert.*;
@@ -14,7 +14,7 @@ public class ServiceTest {
 	
 	@Test
 	public void newAccountTest() {
-		Account a0 = new Account(firstName,lastName,000000);
+		AccountJavaSE a0 = new AccountJavaSE(firstName,lastName,000000);
 		assertEquals(firstName, a0.getFirstName());
 		assertEquals(lastName, a0.getLastName());
 		assertEquals(a0.getAccountNumber(),000000);
@@ -22,8 +22,8 @@ public class ServiceTest {
 	
 	@Test
 	public void retrieveAccountByIdTest() {
-		Account a0 = new Account(firstName,lastName,000000 );
-		Account a1 = new Account(firstName,lastName,000000 );
+		AccountJavaSE a0 = new AccountJavaSE(firstName,lastName,000000 );
+		AccountJavaSE a1 = new AccountJavaSE(firstName,lastName,000000 );
 		Service s0 = new Service();
 		s0.addToAccountMap(a0);
 		s0.addToAccountMap(a1);
@@ -33,16 +33,16 @@ public class ServiceTest {
 	
 	@Test
 	public void accountNumberGetTest() {
-		Account a0 = new Account(firstName,lastName,000001);
+		AccountJavaSE a0 = new AccountJavaSE(firstName,lastName,000001);
 		assertEquals(000001,a0.getAccountNumber());
 	}
 	
 	@Test
 	public void  searchAccountTest1() {
-		Account a0 = new Account(firstName,lastName,000001);
-		Account a1 = new Account(firstName,lastName,000001);
-		Account a2 = new Account(firstName,lastName,000001);
-		Account a3 = new Account(firstName,lastName,000001);
+		AccountJavaSE a0 = new AccountJavaSE(firstName,lastName,000001);
+		AccountJavaSE a1 = new AccountJavaSE(firstName,lastName,000001);
+		AccountJavaSE a2 = new AccountJavaSE(firstName,lastName,000001);
+		AccountJavaSE a3 = new AccountJavaSE(firstName,lastName,000001);
 		Service s0 = new Service();
 		s0.addToAccountMap(a0);
 		s0.addToAccountMap(a1);
@@ -53,10 +53,10 @@ public class ServiceTest {
 	}
 	
 	public void searchAccountTest2() {
-		Account a0 = new Account("","",000001);
-		Account a1 = new Account(" "," ",000001);
-		Account a2 = new Account("  ","  ",000001);
-		Account a3 = new Account("   ","   ",000001);
+		AccountJavaSE a0 = new AccountJavaSE("","",000001);
+		AccountJavaSE a1 = new AccountJavaSE(" "," ",000001);
+		AccountJavaSE a2 = new AccountJavaSE("  ","  ",000001);
+		AccountJavaSE a3 = new AccountJavaSE("   ","   ",000001);
 		Service s0 = new Service();
 		s0.addToAccountMap(a0);
 		s0.addToAccountMap(a1);

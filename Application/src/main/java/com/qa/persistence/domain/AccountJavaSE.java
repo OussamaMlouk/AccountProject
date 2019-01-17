@@ -1,11 +1,11 @@
-package com.qa.persistence.repository;
+package com.qa.persistence.domain;
 
-public class Account { 
+public class AccountJavaSE { 
 	private String firstName;
 	private String lastName;
 	private int accountNumber;
 
-	public Account(String firstName, String lastName, int accountNumber) {
+	public AccountJavaSE(String firstName, String lastName, int accountNumber) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.accountNumber = accountNumber;
